@@ -159,7 +159,7 @@ func httpPost(requesturl string, params map[string]interface{}) string {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-	client := &http.Client{Transport: tr, Timeout: time.Duration(3) * time.Second}
+	client := &http.Client{Transport: tr, Timeout: time.Duration(20) * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
